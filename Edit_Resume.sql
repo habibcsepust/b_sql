@@ -14,7 +14,6 @@ Select Top 10 * From bdjCorporate..Feedbacks Order by ID Desc
 
 Select Top 10 * From bdjResumes..EDU where P_ID=5501313
 
-Select Top 10 * From bdjResumes..EDU where
 
 
 Select Top 10 * From bdjResumes..Useraccounts where accPhone = '01301728315'
@@ -61,6 +60,28 @@ select u.accFirstName,u.accLastName,u.accGender,u.accPhone,u.accEmail,u.accCatID
 
 
 SELECT dfvID, FieldValue, AddedOn FROM bdjDataset.dbo.DataFieldValues WHERE dfID = 4 And FieldValue LIKE '%ban%' ORDER BY FieldValue
+
+
+
+
+select top 10 * from useraccounts 
+
+
+
+
+;WITH cteReports AS
+(
+select top 10 count(*) as NO_Of_Exist, CONCAT(accFirstName, accLastName) as FullName
+	from useraccounts 
+	group by accFirstName, accLastName
+	having count(*) > 1 and accFirstName ='Habib'
+)
+
+Select NO_Of_Exist, FullName FROM cteReports 
+go
+
+
+
 
 
 
