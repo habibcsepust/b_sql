@@ -72,3 +72,15 @@ SELECT ROUND(AVG(case when Rating > 0 then Rating end),
 SELECT  (SELECT COUNT(*) FROM vdo.ResumeQuestions Q WHERE Q.qActivated >= 0) AS TotalQuestionCount
 
 Select (SELECT COUNT(*) FROM vdo.Answers VA WHERE VA.P_ID = 241028) AS TotalAnswerCount
+
+
+SELECT top 10 * FROM vdo.Answers VA WHERE VA.P_ID = 241028
+
+
+
+
+SELECT FileType,DocumentType as path_doc,UpdatedOn FROM  bdjResumeFiles..ResumeFiles where p_id=201028
+
+
+
+
